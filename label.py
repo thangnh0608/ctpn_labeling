@@ -12,7 +12,7 @@ index = 0
 CLICK_MAX = 0
 
 LABEL = np.zeros(8)
-PATH = 'D:/PROJECT/text/text_label/'
+PATH = 'path_to_save_text_file'
 
 
 class Application(Frame):
@@ -126,7 +126,7 @@ class Application(Frame):
         path = PATH
         self.box = self.num_box #saved box
 
-        with open(path + IMAGE_LIST[index] + '.txt', "a") as text_file:
+        with open(path + IMAGE_LIST[index][0:-4] + '.txt', "a") as text_file:
             for i, coordinate in enumerate(LABEL):
                 text_file.write(str(int(coordinate))) # 8 elements
                 if i != 7 :
